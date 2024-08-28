@@ -1,0 +1,268 @@
+/* === CSS SETINGS === */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--fParrafos);
+  line-height: 2;
+}
+
+/* CUSTOME PROPERTIES */
+:root {
+  /* fuentes */
+  --fHeading: "PT sans", sans-serif;
+  --fParrafos: "Open Sans", sans-serif;
+  /* colores */
+  --primario: #784d3c;
+  --secundario: #6504a1;
+  --terciario: #314cf9;
+  --blanco: #ffffff;
+  --negro: #000000;
+  --gris: #e1e1e1;
+}
+
+/*=== GLOBALES ===*/
+.cont {
+  width: min(90%, 120rem);
+
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fHeading);
+  line-height: 1.2;
+}
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+h4 {
+  font-size: 2.8rem;
+}
+img {
+  max-width: 100%;
+}
+
+/*UTILIES*/
+.no-mg {
+  margin: 0;
+}
+.no-pd {
+  padding: 0;
+}
+.txt-center {
+  text-align: center;
+}
+
+/* BOTONES*/
+.btn {
+  display: inline-block;
+  font-family: var(--fHeading);
+  color: var(--blanco);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+.btn--primary {
+  background-color: var(--negro);
+}
+.btn--second {
+  background-color: var(--secundario);
+}
+
+/* === HEADER === */
+.header {
+  background-image: url(../img/banner.jpg);
+  height: 60rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.header__txt {
+  color: var(--blanco);
+  background-color: var(--negro);
+  padding-bottom: 2rem;
+  font-size: 6rem;
+  margin-top: 5rem;
+  line-height: 4.5rem;
+}
+.header__p {
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__txt {
+    margin-top: 12rem;
+  }
+}
+.bar {
+  padding: 4rem;
+}
+.logo {
+  color: var(--blanco);
+}
+.logo__name {
+  font-weight: normal;
+}
+.logo__span {
+  font-weight: bold;
+}
+.nav__a {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--blanco);
+}
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .grid-cont {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+  }
+}
+
+/* === SECCION ARTICULOS === */
+.art {
+  border-bottom: 1px solid var(--gris);
+  margin-bottom: 2rem;
+}
+.art:last-of-type {
+  /*Al ultimo ARTICULO le quitamos la linea porque no hay mas elementos bajo el*/
+  border: none;
+  margin-bottom: 0;
+}
+.cursos {
+  list-style: none;
+}
+.widget-curso {
+  border-bottom: 1px solid var(--gris);
+  margin-bottom: 2rem;
+}
+.widget-curso:last-of-type {
+  /*permite que al agregar o quitar cursos el ultimo nunca tenga linea ni margen*/
+  border: none;
+  margin-bottom: 0;
+}
+.widget-curso__label {
+  font-family: var(--fHeading);
+  font-weight: 700;
+}
+.widget-curso__span {
+  font-weight: 400;
+}
+.widget-curso__label,
+.widget-curso__span {
+  font-size: 2rem;
+}
+
+/* === FOOTER === */
+
+.footer {
+  background-color: var(--negro);
+}
+.bar--ft {
+  padding: 2rem;
+}
+
+/* ====  NOSOTROS  ==== */
+.header__txt--nos {
+  background-color: var(--primario);
+}
+
+/* ====  CURSOS  ==== */
+.header__txt--cur {
+  background-color: var(--secundario);
+}
+
+.cursos__cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+.cursos__info {
+  grid-column: 1 / 2;
+}
+.cursos__img {
+  grid-column: 2 / 3;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+.img__jugo {
+  height: 20rem;
+  border-radius: 2rem;
+}
+
+/* ===== ARTICULOS ====*/
+
+.art__cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+.art__img {
+  grid-column: 1 / 2;
+}
+.img__art {
+  border-radius: 2rem;
+}
+.art__info {
+  grid-column: 2 / 3;
+  margin-top: -2rem;
+}
+
+/* ===== CONT-CURSOS =====*/
+.header__txt--cc {
+  background-color: var(--terciario);
+}
+.contcur__cont {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+.contcur__img {
+  grid-row: 2 / 3;
+  justify-self: center;
+}
+.img__contcur {
+  height: 30rem;
+  border-radius: 2rem;
+  margin-top: -3rem;
+}
+.contcur__info {
+  grid-row: 1 / 2;
+}
+.span__contcur {
+  font-weight: 400;
+}
